@@ -1,7 +1,9 @@
 import React,{useState,useEffect,useContext} from 'react'
 import {AuthContext} from '../Context/AuthProvider';
 import {database } from '../firebase';
-import { useHistory } from 'react-router-dom';
+import { useHistory,Link } from 'react-router-dom';
+import './Signup.css'
+
 function Signup() {
     const [email,setEmail] =useState('');
     const[password,setPassword] = useState('');
@@ -40,23 +42,27 @@ function Signup() {
         }
       },[])
     return (
-        <div>
+        <div className="mycarda">
+        <div className="carda">
+            <h2 className="h2a"><img style={{paddingRight:'1rem',marginTop:'-0.5rem'}} src="https://img.icons8.com/material/48/000000/movie-projector.png"/>WATCH TIME</h2>
             <form onSubmit={handleSignup} >
                 <div>
-                    <label htmlFor=''>UserName</label>
-                    <input type='text' value={name} onChange={(e)=>setName(e.target.value)}/>
+                    <label className="labela" htmlFor=''>UserName</label>
+                    <input className="inputa" type='text' value={name} onChange={(e)=>setName(e.target.value)}/>
 
                 </div>
                 <div>
-                <label htmlFor=''>Email</label>
-                    <input type='email' value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                <label className="labela" htmlFor=''>Email</label>
+                    <input className="inputa" type='email' value={email} onChange={(e)=>setEmail(e.target.value)}/>
                 </div>
                 <div>
-                <label htmlFor=''>Password</label>
-                    <input type='password' value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                <label className="labela" htmlFor=''>Password</label>
+                    <input className="inputa" type='password' value={password} onChange={(e)=>setPassword(e.target.value)}/>
                 </div>
-                <button type='submit' disabled={loading}>SignUp</button>
+                <Link to="/login"><button className="buttona lefta">Login</button></Link>
+                <button className="buttona righta" type='submit' disabled={loading}>SignUp</button>
             </form>
+        </div>
         </div>
     )
 }

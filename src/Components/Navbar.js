@@ -30,7 +30,7 @@ export default function Navbar({uid}) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Link style={{textDecoration:'none',color:'white'}} to="/"><h2>Movie DB</h2></Link>
+          <Link style={{textDecoration:'none',color:'white',fontFamily:'fantasy'}} to="/"><h2><img style={{marginRight:'0.6rem'}} src="https://img.icons8.com/material/48/ffffff/movie-projector.png"/>Watch Time</h2></Link>
           <Typography variant="h6" className={classes.title}>
           <Link style={{textDecoration:'none',color:'white'}} to={`/favourite/${uid}`}><h5>Favourites</h5></Link>
           </Typography>
